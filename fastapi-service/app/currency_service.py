@@ -11,8 +11,11 @@ EXCHANGE_RATES = {
 }
 
 
+
 def convert_currency(from_currency: str, to_currency: str, amount: float) -> dict:
-    """    
+    """   
+    
+     
     Args:
         from_currency: Source currency code
         to_currency: Target currency code
