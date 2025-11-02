@@ -13,22 +13,10 @@ EXCHANGE_RATES = {
 
 
 def convert_currency(from_currency: str, to_currency: str, amount: float) -> dict:
-    """   
-    
-     
-    Args:
-        from_currency: Source currency code
-        to_currency: Target currency code
-        amount: Amount to convert
-    
-    Returns:
-        Dictionary with converted_amount, rate, and message
-    """
-    # Normalize currency codes to uppercase
+
     from_curr = from_currency.upper()
     to_curr = to_currency.upper()
     
-    # Same currency
     if from_curr == to_curr:
         return {
             'converted_amount': amount,
@@ -36,7 +24,6 @@ def convert_currency(from_currency: str, to_currency: str, amount: float) -> dic
             'message': f'No conversion needed ({from_curr} to {to_curr})'
         }
     
-    # Check direct rate
     rate_key = (from_curr, to_curr)
     if rate_key in EXCHANGE_RATES:
         rate = EXCHANGE_RATES[rate_key]
